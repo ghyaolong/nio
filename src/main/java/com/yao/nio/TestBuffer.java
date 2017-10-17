@@ -3,6 +3,7 @@ package com.yao.nio;
 import org.junit.Test;
 
 import java.nio.ByteBuffer;
+import java.util.Scanner;
 
 public class TestBuffer {
 
@@ -27,5 +28,14 @@ public class TestBuffer {
     public void test1(){
         ByteBuffer bb = ByteBuffer.allocate(1024);
         bb.clear();
+    }
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            String str = sc.next();
+            System.out.println(str);
+        }
     }
 }

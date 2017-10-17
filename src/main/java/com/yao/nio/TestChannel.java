@@ -127,20 +127,23 @@ public class TestChannel {
         FileChannel fisChannel = null;
         FileChannel fosChannel = null;
         try {
-            fis = new FileInputStream("1.jpeg");
-            fos = new FileOutputStream("2.jpeg");
+            fis = new FileInputStream("1.jpg");
+            fos = new FileOutputStream("2.jpg");
+
+            //File file = new File("1.jpg");
 
             fisChannel = fis.getChannel();
             fosChannel = fos.getChannel();
+           // System.out.println("size:"+fisChannel.size());
 
             ByteBuffer buf = ByteBuffer.allocate(1024);
 
             while (fisChannel.read(buf) != -1) {
                 buf.flip();
                 fosChannel.write(buf);
-
                 buf.clear();
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
